@@ -58,7 +58,7 @@ def compute_queries(search_list, lt, config, out_file):
     write_output(x, config, out_file, "a")
 
 if __name__ == "__main__":
-    with open(make_dir("scopus.config", protocol="local")) as handle:
+    with open(make_dir("scopus.config", protocol="workspace")) as handle:
         config = json.load(handle)
     xls = pd.ExcelFile(make_dir(config['file'], protocol="workspace"))
     df = pd.read_excel(xls, sheet_name=config['sheet_name'], header=config['header'])
